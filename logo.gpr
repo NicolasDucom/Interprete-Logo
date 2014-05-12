@@ -1,0 +1,6 @@
+project Logo is
+
+   for Main use ("Logo.adb");
+
+end Logo;
+

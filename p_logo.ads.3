@@ -1,0 +1,41 @@
+
+package p_logo is
+	type t_action is new String(1..20);
+	type t_nextCommand is access all t_command;
+	type noValueCommands is character ("HOME","PENUP","PU","PENDOWN","PD","CG","CLEAN","[","]");
+	type rules IS Record
+		penDown:boolean;
+	end Record;
+	type t_command IS Record
+		action: t_action;
+		value: Integer;
+		buffer: command_buffer;
+	end Record;
+	type turtle is Record
+		orientation:Integer;
+		xCoord:Integer;
+		yCoord:Integer;
+	end Record;
+	type command_in_buffer IS Record
+		command:t_command;
+		nextCommand: t_nextCommand;
+	end Record;
+	type command_buffer IS Record
+		first:t_command_in_buffer;
+		length:Integer;
+	end Record;
+
+	procedure build(t:in out turtle; interpreterRules:in out rules; op:in out t_command);
+	Procedure interpreter;
+	function compareStrings(A,B:t_action) return boolean;
+	function getCommand return t_command;
+	function getBufferCommand return command_buffer;
+	function degreesToRad(d: Integer) return float;
+	function textToAction(S:String) return t_action;
+	procedure put(act:in t_action);
+	procedure doCommand(comm:t_command;turt:in out turtle);
+	procedure doForward(comm:t_command;turt:in out turtle);
+	procedure doLeft(comm:t_command;turt:in out turtle);
+	procedure doRight(comm:t_command;turt:in out turtle);
+	procedure doBackward(comm:t_command;turt:in out turtle);
+	end p_logo;

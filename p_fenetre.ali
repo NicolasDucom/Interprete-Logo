@@ -1,0 +1,385 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U p_fenetre%b		p_fenetre.adb		149d1cae OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+L "-lfenetre"
+
+U p_fenetre%s		p_fenetre.ads		a1b86a29 BN EE OO PK
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-numeri.ads		20130417131020 bb51c45a
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131026 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D p_fenetre.ads		20140430141554 a1b86a29
+D p_fenetre.adb		20140430141556 5a55a346
+D system.ads		20130417131036 5fc8ae56
+D s-exctab.ads		20130417131028 66e51330
+D s-parame.ads		20130417131032 b6e20cc0
+D s-secsta.ads		20130417131032 eea35a36
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-traent.ads		20130417131032 5221ee41
+X 1 ada.ads
+16K9*Ada 19e8 8|29r20 517r14
+X 3 a-numeri.ads
+16K13*Numerics 32e17 8|29w24 517r18
+21N4*Pi 8|517r27
+X 5 interfac.ads
+36K9*Interfaces 177e15 8|29r6 40r22
+X 6 i-c.ads
+18K20*C 230e17 8|29w17 40r33
+72E9*char<character>
+79A9*char_array(72E9)<60M9> 8|136r39 154r51
+84V13*To_C{79A9} 8|302s41 467s44
+X 7 p_fenetre.ads
+29K9*P_fenetre 236l5 236e14 8|31b14 530l5 530t14
+35i4*Adagraph_Dll_Version{integer} 8|526r25
+42e4*Vk_Nul{character}
+43e4*Vk_Prior{character}
+44e4*Vk_Next{character}
+45e4*Vk_End{character}
+46e4*Vk_Home{character}
+47e4*Vk_Left{character}
+48e4*Vk_Up{character}
+49e4*Vk_Right{character}
+50e4*Vk_Down{character}
+51e4*Vk_Insert{character}
+52e4*Vk_Delete{character}
+59E9*Event_Type 59e78 63r18
+59n24*None{59E9}
+59n30*Moved{59E9}
+59n37*Left_Up{59E9}
+59n46*Left_Down{59E9}
+59n57*Right_Up{59E9}
+59n67*Right_Down{59E9}
+61R9*Mouse_Type 66e17
+63e10*Event{59E9}
+64i10*X_Pos{integer}
+65i10*Y_Pos{integer}
+68E9*Color_Type 70e76 119r37 121r50 123r53 126r34 129r44 133r45 138r45 141r48
+. 144r54 148r38 161r51 8|289r37 292r36 309r47 316r14 320r53 323r39 394r45
+. 397r49 405r44 409r48 417r45 421r49 430r43 433r56 441r48 445r52 452r54 455r40
+. 464r38 467r57 506r51 509r37
+68n24*Black{68E9} 119r51 8|289r51
+68n31*Blue{68E9}
+68n37*Green{68E9}
+68n44*Cyan{68E9}
+68n50*Red{68E9}
+68n55*Magenta{68E9}
+68n64*Brown{68E9}
+69n24*Light_Gray{68E9}
+69n36*Dark_Gray{68E9}
+69n47*Light_Blue{68E9}
+69n59*Light_Green{68E9}
+70n24*Light_Cyan{68E9}
+70n36*Light_Red{68E9}
+70n47*Light_Magenta{68E9}
+70n62*Yellow{68E9}
+70n70*White{68E9} 123r67 126r48 129r58 133r59 138r59 141r62 144r68 148r52
+. 161r65 8|320r67 394r59 405r58 417r59 430r57 441r62 452r68 464r52 506r65
+72E9*Fill_Type 72e37 130r44 134r45 142r48 8|406r44 409r70 418r45 421r71 442r48
+. 445r74
+72n23*No_Fill{72E9} 130r58 134r59 142r62 8|406r58 418r59 442r62
+72n32*Fill{72E9}
+79V13*Get_Dll_Version{integer} 231r19 8|234b13 242l8 242t23 526s7
+85U14*Create_Graph_Window 233r19 8|269b14 276l8 276t27
+87V13*Get_window_Width{integer} 8|246b13 249l8 249t24
+89V13*Get_window_Height{integer} 8|251b13 254l8 254t25
+91V13*Get_Font_Width{integer} 8|256b13 259l8 259t22
+93V13*Get_Font_Height{integer} 8|261b13 264l8 264t23
+95U14*Destroy_Graph_Window 234r19 8|279b14 286l8 286t28
+97V13*Is_Open{boolean} 220r19 8|222b13 231l8 231t15
+99U14*Set_Window_Title 99>32 232r19 8|299b14 306l8 306t24
+99s32 Title{string} 8|299b31 302r47
+105V13*Get_Key{character} 215r19 8|331b13 340l8 340t15
+107U14*Get_mouse_Left_button_down 107<42 107<45 8|342b14 352l8 352t34
+107i42 X{integer} 8|342b41 350m7
+107i45 Y{integer} 8|342b44 351m7
+109U14*Get_Mouse_Left_Button_Up 109<40 109<43 8|355b14 365l8 365t32
+109i40 X{integer} 8|355b39 363m7
+109i43 Y{integer} 8|355b42 364m7
+111U14*Get_mouse_Right_button_down 111<43 111<46 8|367b14 377l8 377t35
+111i43 X{integer} 8|367b42 375m7
+111i46 Y{integer} 8|367b45 376m7
+113U14*Get_mouse_Right_button_up 113<41 113<44 8|380b14 390l8 390t33
+113i41 X{integer} 8|380b40 388m7
+113i44 Y{integer} 8|380b43 389m7
+119U14*Clear_Window 119>28 230r19 8|289b14 296l8 296t20
+119e28 Hue{68E9} 8|289b28 292r52
+121V13*Get_Pixel{68E9} 121>24 121>27 222r19 8|309b13 317l8 317t17
+121i24 X{integer} 8|309b24 312r38
+121i27 Y{integer} 8|309b27 312r41
+123U14*Put_Pixel 123>25 123>28 123>44 223r19 8|320b14 327l8 327t17
+123i25 X{integer} 8|320b25 323r33
+123i28 Y{integer} 8|320b28 323r36
+123e44 Hue{68E9} 8|320b44 323r55
+125U14*Draw_Line 125>25 125>29 125>33 125>37 126>25 224r19 8|393b14 401l8
+. 401t17
+125i25 X1{integer} 8|393b25 397r33
+125i29 Y1{integer} 8|393b29 397r37
+125i33 X2{integer} 8|393b33 397r41
+125i37 Y2{integer} 8|393b37 397r45
+126e25 Hue{68E9} 8|394b25 397r65
+128U14*Draw_Box 128>24 128>28 128>32 128>36 129>24 130>24 221r19 8|404b14
+. 413l8 413t16
+128i24 X1{integer} 8|404b24 409r32
+128i28 Y1{integer} 8|404b28 409r36
+128i32 X2{integer} 8|404b32 409r40
+128i36 Y2{integer} 8|404b36 409r44
+129e24 Hue{68E9} 8|405b24 409r64
+130e24 Filled{72E9} 8|406b24 409r85
+132U14*Draw_Circle 132>27 132>30 132>33 133>27 134>27 226r19 8|416b14 425l8
+. 425t19
+132i27 X{integer} 8|416b27 421r35
+132i30 Y{integer} 8|416b30 421r38
+132i33 Radius{integer} 8|416b33 421r41
+133e27 Hue{68E9} 8|417b27 421r65
+134e27 Filled{72E9} 8|418b27 421r86
+136U14*Draw_Arc 136>24 136>27 136>30 136>33 137>25 137>32 138>27 227r19 8|428b14
+. 437l8 437t16
+136i24 X{integer} 8|428b24 433r32
+136i27 Y{integer} 8|428b27 433r35
+136i30 A{integer} 8|428b30 433r38
+136i33 B{integer} 8|428b33 433r41
+137f25 debut{float} 8|429b25 433r44
+137f32 fin{float} 8|429b32 433r51
+138e27 Hue{68E9} 8|430b25 433r72
+140U14*Draw_Ellipse 140>28 140>32 140>36 140>40 141>28 142>28 228r19 8|440b14
+. 449l8 449t20
+140i28 X1{integer} 8|440b28 445r36
+140i32 Y1{integer} 8|440b32 445r40
+140i36 X2{integer} 8|440b36 445r44
+140i40 Y2{integer} 8|440b40 445r48
+141e28 Hue{68E9} 8|441b28 445r68
+142e28 Filled{72E9} 8|442b28 445r89
+144U14*Flood_Fill 144>26 144>29 144>45 225r19 8|452b14 459l8 459t18
+144i26 X{integer} 8|452b26 455r34
+144i29 Y{integer} 8|452b29 455r37
+144e45 Hue{68E9} 8|452b45 455r56
+146U14*Display_Text 146>28 146>31 147>28 148>28 229r19 8|462b14 471l8 471t20
+146i28 X{integer} 8|462b28 467r36
+146i31 Y{integer} 8|462b31 467r39
+147s28 Text{string} 8|463b28 467r50
+148e28 Hue{68E9} 8|464b28 467r73
+155V13*Where_X{integer} 218r19 8|474b13 482l8 482t15
+157V13*Where_Y{integer} 219r19 8|485b13 493l8 493t15
+159U14*Goto_XY 159>23 159>26 217r19 8|496b14 503l8 503t15
+159i23 X{integer} 8|496b23 499r31
+159i26 Y{integer} 8|496b26 499r34
+161U14*Draw_To 161>23 161>26 161>42 216r19 8|506b14 513l8 513t15
+161i23 X{integer} 8|506b23 509r31
+161i26 Y{integer} 8|506b26 509r34
+161e42 Hue{68E9} 8|506b42 509r53
+163V13*Pi{float} 8|515b13 518l8 518t10
+169X4*Create_Class_Failed 8|187r34
+170X4*Create_Event_Failed 8|181r34
+171X4*Create_Thread_Failed 8|182r34
+172X4*Create_Window_Failed 8|188r34
+173X4*Dll_Version_Error 8|527r13
+174X4*Ellipse_Error 8|202r34
+175X4*Error_Copying_Cmdline 8|190r34
+176X4*Error_Copying_Title 8|189r34
+177X4*Error_Reading_Font
+178X4*Error_Reading_Size
+179X4*Fill_Rect_Error 8|193r34
+180X4*Flood_Fill_Error 8|204r34
+181X4*Get_Pixel_Error 8|203r34
+182X4*Get_Position_Error 8|208r34
+183X4*Invalid_Color_Value 8|184r34
+184X4*Invalid_Coordinate 8|185r34
+185X4*Invalid_Fill_Option 8|186r34
+186X4*Invalid_Window_Size 8|207r34
+187X4*Invalidate_Rect_Error 8|194r34
+188X4*Line_To_Error 8|199r34
+189X4*Message_Reg_Failed 8|180r34
+190X4*Move_To_Error 8|198r34
+191X4*Mouse_Event_Error
+192X4*Rectangle_Error 8|201r34
+193X4*Select_Brush_Error 8|200r34
+194X4*Select_Pen_Error 8|197r34
+195X4*Set_Pixel_Error 8|196r34
+196X4*Set_Textcolor_Error 8|205r34
+197X4*Set_Title_Error 8|192r34
+198X4*Text_Out_Error 8|206r34
+199X4*Unknown_Adagraph_Error 8|211r34 228r31
+200X4*Update_Window_Error 8|195r34
+201X4*Wait_Failed_Error 8|191r34
+202X4*Window_Already_Closed 8|179r34
+203X4*Window_Already_Open 8|178r34
+204X4*Window_Not_Open 8|183r34
+205X4*Close_Handle_Failed 8|209r34
+206X4*Thread_Status_Error 8|210r34
+X 8 p_fenetre.adb
+40K12 C=40:33 136r37 154r49 302r39 467r42
+47i4 No_Errors{integer} 176r18 238r25 273r25 283r25 293r25 303r25 313r25
+. 324r25 336r25 347r25 360r25 372r25 385r25 398r25 410r25 422r25 434r25 446r25
+. 456r25 468r25 478r25 489r25 500r25 510r25
+48i4 MouseNone{integer}
+49i4 MouseMove{integer}
+50i4 MouseLeftUp{integer}
+51i4 MouseRightUp{integer}
+52i4 MouseLeftDown{integer}
+53i4 MouseRightDown{integer}
+60R9 MouseEventStruct 65e17 66r26 68r46
+62i10*Event{integer}
+63i10*Xpos{integer}
+64i10*Ypos{integer}
+68P9 MouseEventStructAccess(60R9) 69r26
+71P9 Integer_Access(integer) 72r26 88r44 91r42 94r45 97r43
+74P9 character_Access(character) 75r26 85r25
+85V13 GetKey{integer} 85>21 86b<c,GetKey>22 335s23
+85p21 c{74P9}
+88V13 GetMouseLeftButtonDown{integer} 88>37 88>40 89b<c,GetMouseLeftButtonDown>22
+. 346s23
+88p37 x{71P9}
+88p40 y{71P9}
+91V13 GetMouseLeftButtonUp{integer} 91>35 91>38 92b<c,GetMouseLeftButtonUp>22
+. 359s23
+91p35 x{71P9}
+91p38 y{71P9}
+94V13 GetMouseRightButtonDown{integer} 94>38 94>41 95b<c,GetMouseRightButtonDown>22
+. 371s23
+94p38 x{71P9}
+94p41 y{71P9}
+97V13 GetMouseRightButtonUp{integer} 97>36 97>39 98b<c,GetMouseRightButtonUp>22
+. 384s23
+97p36 x{71P9}
+97p39 y{71P9}
+100V13 IsOpen{integer} 101b<c,IsOpen>22 225s12
+103V13 GetFontWidth{integer} 104b<c,GetFontWidth>22 258s14
+106V13 GetFontHeight{integer} 107b<c,GetFontHeight>22 263s14
+109V13 GetDllVersion{integer} 110b<c,GetDLLVersion>22 237s23
+112V13 GetWindowWidth{integer} 113b<c,GetWindowWidth>22 248s14
+115V13 GetWindowHeight{integer} 116b<c,GetWindowHeight>22 253s14
+118V13 CreateGraphWindow{integer} 119b<c,CreateGraphWindow>22 272s23
+121V13 DestroyGraphWindow{integer} 122b<c,DestroyGraphWindow>22 282s23
+124V13 ClearWindow{integer} 124>26 125b<c,ClearWindow>22 292s23
+124i26 Hue{integer}
+127V13 GetColorPixel{integer} 127>28 127>31 128b<c,GetColorPixel>22 312s23
+127i28 X{integer}
+127i31 Y{integer}
+130V13 Putpixel{integer} 130>23 130>26 130>29 131b<c,PutPixel>22 323s23
+130i23 X{integer}
+130i26 Y{integer}
+130i29 Hue{integer}
+133V13 FillFlood{integer} 133>24 133>27 133>30 134b<c,FillFlood>22 455s23
+133i24 X{integer}
+133i27 Y{integer}
+133i30 Hue{integer}
+136V13 SetWindowTitle{integer} 136>29 137b<c,SetWindowTitle>22 302s23
+136a29 Title{6|79A9}
+139V13 DrawLine{integer} 139>23 139>27 139>31 139>35 139>39 140b<c,DrawLine>22
+. 397s23
+139i23 X1{integer}
+139i27 Y1{integer}
+139i31 X2{integer}
+139i35 Y2{integer}
+139i39 Hue{integer}
+142V13 DrawBox{integer} 142>22 142>26 142>30 142>34 142>38 142>43 143b<c,DrawBox>22
+. 409s23
+142i22 X1{integer}
+142i26 Y1{integer}
+142i30 X2{integer}
+142i34 Y2{integer}
+142i38 Hue{integer}
+142i43 Filled{integer}
+145V13 DrawCircle{integer} 145>25 145>28 145>31 145>39 145>44 146b<c,DrawCircle>22
+. 421s23
+145i25 X{integer}
+145i28 Y{integer}
+145i31 Radius{integer}
+145i39 Hue{integer}
+145i44 Filled{integer}
+148V13 DrawArc{integer} 148>22 148>25 148>28 148>31 148>44 148>51 148>64
+. 149b<c,DrawArc>22 433s23
+148i22 X{integer}
+148i25 Y{integer}
+148i28 a{integer}
+148i31 b{integer}
+148f44 debut{float}
+148f51 fin{float}
+148i64 Hue{integer}
+151V13 DrawEllipse{integer} 151>26 151>30 151>34 151>38 151>42 151>47 152b<c,DrawEllipse>22
+. 445s23
+151i26 X1{integer}
+151i30 Y1{integer}
+151i34 X2{integer}
+151i38 Y2{integer}
+151i42 Hue{integer}
+151i47 Filled{integer}
+154V13 DisplayText{integer} 154>26 154>29 154>42 154>63 155b<c,DisplayText>22
+. 467s23
+154i26 X{integer}
+154i29 Y{integer}
+154a42 Text{6|79A9}
+154i63 Hue{integer}
+157V13 WhereX{integer} 158b<c,WhereX>22 477s23
+160V13 WhereY{integer} 161b<c,WhereY>22 488s23
+163V13 GotoXY{integer} 163>21 163>24 164b<c,GotoXY>22 499s23
+163i21 X{integer}
+163i24 Y{integer}
+166V13 DrawTo{integer} 166>21 166>24 166>27 167b<c,DrawTo>22 509s23
+166i21 X{integer}
+166i24 Y{integer}
+166i27 Hue{integer}
+174U14 Make_Exception 174b14 174>30 214l8 214t22 239s10 274s10 284s10 294s10
+. 304s10 314s10 325s10 337s10 348s10 361s10 373s10 386s10 399s10 411s10 423s10
+. 435s10 447s10 457s10 469s10 479s10 490s10 501s10 511s10
+174i30 Error{integer} 176r10 177r15
+223b7 Result{boolean} 226m25 227m25 230r14
+235i7 Return_Value{integer} 237m7 238r10 239r26 241r14
+270i7 Return_Value{integer} 272m7 273r10 274r26
+280i7 Return_Value{integer} 282m7 283r10 284r26
+290i7 Return_Value{integer} 292m7 293r10 294r26
+300i7 Return_Value{integer} 302m7 303r10 304r26
+310i7 Return_Value{integer} 312m7 313r10 314r26 316r30
+321i7 Return_Value{integer} 323m7 324r10 325r26
+332e7 key{character} 335m30 335r30 339r14
+333i7 return_value{integer} 335m7 336r10 337r26
+343i7 x_aux{integer} 346m46 346r46 350r12
+343i14 y_aux{integer} 346m70 346r70 351r12
+344i7 return_value{integer} 346m7 347r10 348r26
+356i7 x_aux{integer} 359m44 359r44 363r12
+356i14 y_aux{integer} 359m68 359r68 364r12
+357i7 return_value{integer} 359m7 360r10 361r26
+368i7 x_aux{integer} 371m47 371r47 375r12
+368i14 y_aux{integer} 371m71 371r71 376r12
+369i7 return_value{integer} 371m7 372r10 373r26
+381i7 x_aux{integer} 384m45 384r45 388r12
+381i14 y_aux{integer} 384m69 384r69 389r12
+382i7 return_value{integer} 384m7 385r10 386r26
+395i7 Return_Value{integer} 397m7 398r10 399r26
+407i7 Return_Value{integer} 409m7 410r10 411r26
+419i7 Return_Value{integer} 421m7 422r10 423r26
+431i7 Return_Value{integer} 433m7 434r10 435r26
+443i7 Return_Value{integer} 445m7 446r10 447r26
+453i7 Return_Value{integer} 455m7 456r10 457r26
+465i7 Return_Value{integer} 467m7 468r10 469r26
+475i7 Return_Value{integer} 477m7 478r10 479r26 481r14
+486i7 Return_Value{integer} 488m7 489r10 490r26 492r14
+497i7 Return_Value{integer} 499m7 500r10 501r26
+507i7 Return_Value{integer} 509m7 510r10 511r26
+

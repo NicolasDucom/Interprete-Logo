@@ -1,0 +1,23 @@
+V "GNAT Lib v2013"
+M P W=b
+A -gnatwu
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV SPARK
+
+U logo%b		logo.adb		eefc845a NE OO SU KU
+W p_logo%s		p_logo.adb		p_logo.ali
+
+D logo.adb		20140504205446 5e8f2b93
+D p_logo.ads		20140506225100 b073afc9
+D system.ads		20130417131036 5fc8ae56
+X 1 logo.adb
+2U11*Logo 2b11 5l5 5t9
+X 2 p_logo.ads
+2K9*p_logo 1|1w6 1r18 4r3 2|64e19
+40U19*interpreter 1|4s10
+

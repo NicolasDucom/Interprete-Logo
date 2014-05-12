@@ -1,0 +1,23 @@
+WITH Ada.Text_IO;USE Ada.Text_IO;
+--with p_fenetre; use p_fenetre;
+with ada.Integer_Text_IO; use ada.Integer_Text_IO;
+with p_logo; use p_logo;
+PROCEDURE Logo IS
+c : String(1..10);
+int : integer;
+   N : Natural;
+   op:command;
+BEGIN
+  -- p_fenetre.Create_Graph_Window;
+  --  Draw_Line(12,56,34,87);
+   Op.action:=(OTHERS=>'#');
+   While NOT p_logo.compareStrings(Op.action,"exit") LOOP
+      Op:=P_Logo.GetCommand;
+   Put(Op.action);
+   Put(Op.value);
+   IF p_logo.compareStrings(Op.Action,"coucou") THEN
+      Ada.Text_IO.Put_line("youpi");
+   END IF;
+   END LOOP;
+
+End Logo;

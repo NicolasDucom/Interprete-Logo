@@ -1,0 +1,329 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U adagraph%b		adagraph.adb		b6fccc82 OO PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+L "-ladagraph"
+
+U adagraph%s		adagraph.ads		b3c6638d BN EE OO PK
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20130417131022 3ffc8e18
+D a-except.ads		20130417131018 10fcae55
+D a-unccon.ads		20130417131022 f9eb8f06
+D adagraph.ads		20140430104520 b3c6638d
+D adagraph.adb		20140430104620 511bbe94
+D interfac.ads		20130417131026 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D system.ads		20130417131036 5fc8ae56
+D s-exctab.ads		20130417131028 66e51330
+D s-parame.ads		20130417131032 b6e20cc0
+D s-secsta.ads		20130417131032 eea35a36
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-traent.ads		20130417131032 5221ee41
+X 4 adagraph.ads
+29K9*Adagraph 230l5 230e13 5|31b14 536l5 536t13
+35i4*Adagraph_Dll_Version{integer} 5|532r25
+42e4*Vk_Nul{character}
+43e4*Vk_Prior{character}
+44e4*Vk_Next{character}
+45e4*Vk_End{character}
+46e4*Vk_Home{character}
+47e4*Vk_Left{character}
+48e4*Vk_Up{character}
+49e4*Vk_Right{character}
+50e4*Vk_Down{character}
+51e4*Vk_Insert{character}
+52e4*Vk_Delete{character}
+59E9*Event_Type 59e78 63r18
+59n24*None{59E9} 5|403r49
+59n30*Moved{59E9} 5|404r49
+59n37*Left_Up{59E9} 5|405r49
+59n46*Left_Down{59E9} 5|407r49
+59n57*Right_Up{59E9} 5|406r49
+59n67*Right_Down{59E9} 5|408r49
+61R9*Mouse_Type 66e17 107r30 5|386r30 388r22
+63e10*Event{59E9} 5|403m40 404m40 405m40 406m40 407m40 408m40
+64i10*X_Pos{integer} 5|396m17 399m17
+65i10*Y_Pos{integer} 5|397m17 400m17
+68E9*Color_Type 70e76 114r37 116r50 118r53 121r34 124r44 128r45 132r48 135r54
+. 139r38 152r51 5|304r37 307r36 324r47 331r14 335r53 338r39 416r45 419r49
+. 427r44 431r48 439r45 443r49 452r48 456r52 463r54 466r40 475r38 478r57 517r51
+. 520r37
+68n24*Black{68E9} 114r51 5|304r51
+68n31*Blue{68E9}
+68n37*Green{68E9}
+68n44*Cyan{68E9}
+68n50*Red{68E9}
+68n55*Magenta{68E9}
+68n64*Brown{68E9}
+69n24*Light_Gray{68E9}
+69n36*Dark_Gray{68E9}
+69n47*Light_Blue{68E9}
+69n59*Light_Green{68E9}
+70n24*Light_Cyan{68E9}
+70n36*Light_Red{68E9}
+70n47*Light_Magenta{68E9}
+70n62*Yellow{68E9}
+70n70*White{68E9} 118r67 121r48 124r58 128r59 132r62 135r68 139r52 152r65
+. 5|335r67 416r59 427r58 439r59 452r62 463r68 475r52 517r65
+72E9*Fill_Type 72e37 125r44 129r45 133r48 5|428r44 431r70 440r45 443r71 453r48
+. 456r74
+72n23*No_Fill{72E9} 125r58 129r59 133r62 5|428r58 440r59 453r62
+72n32*Fill{72E9}
+79V13*Get_Dll_Version{integer} 223r19 5|237b13 245l8 245t23 532s7
+85U14*Create_Graph_Window 225r19 5|274b14 291l8 291t27
+87V13*Get_window_Width{integer} 5|261b13 264l8 264t24
+89V13*Get_window_Height{integer} 5|266b13 269l8 269t25
+91U14*Destroy_Graph_Window 226r19 5|294b14 301l8 301t28
+93V13*Is_Open{boolean} 211r19 5|225b13 234l8 234t15
+95U14*Set_Window_Title 95>32 224r19 5|314b14 321l8 321t24
+95s32 Title{string} 5|314b31 317r47
+101V13*Key_Hit{boolean} 205r19 5|345b13 357l8 357t15
+103V13*Get_Key{character} 206r19 5|360b13 368l8 368t15
+105V13*Mouse_Event{boolean} 219r19 5|371b13 383l8 383t19
+107V13*Get_Mouse{61R9} 215r19 5|386b13 412l8 412t17
+114U14*Clear_Window 114>28 222r19 5|304b14 311l8 311t20
+114e28 Hue{68E9} 5|304b28 307r52
+116V13*Get_Pixel{68E9} 116>24 116>27 213r19 5|324b13 332l8 332t17
+116i24 X{integer} 5|324b24 327r38
+116i27 Y{integer} 5|324b27 327r41
+118U14*Put_Pixel 118>25 118>28 118>44 214r19 5|335b14 342l8 342t17
+118i25 X{integer} 5|335b25 338r33
+118i28 Y{integer} 5|335b28 338r36
+118e44 Hue{68E9} 5|335b44 338r55
+120U14*Draw_Line 120>25 120>29 120>33 120>37 121>25 216r19 5|415b14 423l8
+. 423t17
+120i25 X1{integer} 5|415b25 419r33
+120i29 Y1{integer} 5|415b29 419r37
+120i33 X2{integer} 5|415b33 419r41
+120i37 Y2{integer} 5|415b37 419r45
+121e25 Hue{68E9} 5|416b25 419r65
+123U14*Draw_Box 123>24 123>28 123>32 123>36 124>24 125>24 212r19 5|426b14
+. 435l8 435t16
+123i24 X1{integer} 5|426b24 431r32
+123i28 Y1{integer} 5|426b28 431r36
+123i32 X2{integer} 5|426b32 431r40
+123i36 Y2{integer} 5|426b36 431r44
+124e24 Hue{68E9} 5|427b24 431r64
+125e24 Filled{72E9} 5|428b24 431r85
+127U14*Draw_Circle 127>27 127>30 127>33 128>27 129>27 218r19 5|438b14 447l8
+. 447t19
+127i27 X{integer} 5|438b27 443r35
+127i30 Y{integer} 5|438b30 443r38
+127i33 Radius{integer} 5|438b33 443r41
+128e27 Hue{68E9} 5|439b27 443r65
+129e27 Filled{72E9} 5|440b27 443r86
+131U14*Draw_Ellipse 131>28 131>32 131>36 131>40 132>28 133>28 220r19 5|451b14
+. 460l8 460t20
+131i28 X1{integer} 5|451b28 456r36
+131i32 Y1{integer} 5|451b32 456r40
+131i36 X2{integer} 5|451b36 456r44
+131i40 Y2{integer} 5|451b40 456r48
+132e28 Hue{68E9} 5|452b28 456r68
+133e28 Filled{72E9} 5|453b28 456r89
+135U14*Flood_Fill 135>26 135>29 135>45 217r19 5|463b14 470l8 470t18
+135i26 X{integer} 5|463b26 466r34
+135i29 Y{integer} 5|463b29 466r37
+135e45 Hue{68E9} 5|463b45 466r56
+137U14*Display_Text 137>28 137>31 138>28 139>28 221r19 5|473b14 482l8 482t20
+137i28 X{integer} 5|473b28 478r36
+137i31 Y{integer} 5|473b31 478r39
+138s28 Text{string} 5|474b28 478r50
+139e28 Hue{68E9} 5|475b28 478r73
+146V13*Where_X{integer} 209r19 5|485b13 493l8 493t15
+148V13*Where_Y{integer} 210r19 5|496b13 504l8 504t15
+150U14*Goto_XY 150>23 150>26 208r19 5|507b14 514l8 514t15
+150i23 X{integer} 5|507b23 510r31
+150i26 Y{integer} 5|507b26 510r34
+152U14*Draw_To 152>23 152>26 152>42 207r19 5|517b14 524l8 524t15
+152i23 X{integer} 5|517b23 520r31
+152i26 Y{integer} 5|517b26 520r34
+152e42 Hue{68E9} 5|517b42 520r53
+159X4*Create_Class_Failed 5|190r34
+160X4*Create_Event_Failed 5|184r34
+161X4*Create_Thread_Failed 5|185r34
+162X4*Create_Window_Failed 5|191r34
+163X4*Dll_Version_Error 5|533r13
+164X4*Ellipse_Error 5|205r34
+165X4*Error_Copying_Cmdline 5|193r34
+166X4*Error_Copying_Title 5|192r34
+167X4*Error_Reading_Font
+168X4*Error_Reading_Size
+169X4*Fill_Rect_Error 5|196r34
+170X4*Flood_Fill_Error 5|207r34
+171X4*Get_Pixel_Error 5|206r34
+172X4*Get_Position_Error 5|211r34
+173X4*Invalid_Color_Value 5|187r34
+174X4*Invalid_Coordinate 5|188r34
+175X4*Invalid_Fill_Option 5|189r34
+176X4*Invalid_Window_Size 5|210r34
+177X4*Invalidate_Rect_Error 5|197r34
+178X4*Line_To_Error 5|202r34
+179X4*Message_Reg_Failed 5|183r34
+180X4*Move_To_Error 5|201r34
+181X4*Mouse_Event_Error 5|409r39
+182X4*Rectangle_Error 5|204r34
+183X4*Select_Brush_Error 5|203r34
+184X4*Select_Pen_Error 5|200r34
+185X4*Set_Pixel_Error 5|199r34
+186X4*Set_Textcolor_Error 5|208r34
+187X4*Set_Title_Error 5|195r34
+188X4*Text_Out_Error 5|209r34
+189X4*Unknown_Adagraph_Error 5|214r34 231r31
+190X4*Update_Window_Error 5|198r34
+191X4*Wait_Failed_Error 5|194r34
+192X4*Window_Already_Closed 5|182r34
+193X4*Window_Already_Open 5|181r34
+194X4*Window_Not_Open 5|186r34
+195X4*Close_Handle_Failed 5|212r34
+196X4*Thread_Status_Error 5|213r34
+X 5 adagraph.adb
+40K12 C=40:33 139r37 154r49 317r39 478r42
+47i4 No_Errors{integer} 179r18 241r25 278r25 298r25 308r25 318r25 328r25
+. 339r25 349r25 364r25 375r25 392r25 420r25 432r25 444r25 457r25 467r25 479r25
+. 489r25 500r25 511r25 521r25
+49i4 MouseNone{integer} 395r28 403r15
+50i4 MouseMove{integer} 404r15
+52i4 MouseLeftUp{integer} 405r15
+53i4 MouseRightUp{integer} 406r15
+54i4 MouseLeftDown{integer} 407r15
+55i4 MouseRightDown{integer} 408r15
+62R9 MouseEventStruct 67e17 68r26 70r46 81r24
+64i10*Event{integer} 395r20 402r22
+65i10*Xpos{integer} 399r36
+66i10*Ypos{integer} 400r36
+70P9 MouseEventStructAccess(62R9) 71r26 91r32 389r22
+73P9 Integer_Access(integer) 74r26 157r32
+80i4 X{integer}
+80i7 Y{integer}
+81r4 The_Mouse{62R9} 389m48 389r48 395r10 399r26 400r26 402r12
+88V13 Mouse_Event{integer} 89b<c,Mouse_Event>22 374s23
+91V13 Get_Mouse{integer} 91>24 92b<c,Get_Mouse>22 391s23
+91p24 Event{70P9}
+94V13 GetKey{integer} 95b<c,GetKey>22 363s23
+97V13 Key_Hit{integer} 98b<c,Key_Hit>22 348s23
+100V13 IsOpen{integer} 101b<c,IsOpen>22 228s12
+103V13 GetFontWidth{integer} 104b<c,GetFontWidth>22
+106V13 GetFontHeight{integer} 107b<c,GetFontHeight>22
+109V13 GetDllVersion{integer} 110b<c,GetDLLVersion>22 240s23
+112V13 GetWindowWidth{integer} 113b<c,GetWindowWidth>22 263s14
+115V13 GetWindowHeight{integer} 116b<c,GetWindowHeight>22 268s14
+118V13 CreateGraphWindow{integer} 119b<c,CreateGraphWindow>22 277s23
+124V13 DestroyGraphWindow{integer} 125b<c,DestroyGraphWindow>22 297s23
+127V13 ClearWindow{integer} 127>26 128b<c,ClearWindow>22 307s23
+127i26 Hue{integer}
+130V13 GetColorPixel{integer} 130>28 130>31 131b<c,GetColorPixel>22 327s23
+130i28 X{integer}
+130i31 Y{integer}
+133V13 Putpixel{integer} 133>23 133>26 133>29 134b<c,PutPixel>22 338s23
+133i23 X{integer}
+133i26 Y{integer}
+133i29 Hue{integer}
+136V13 FillFlood{integer} 136>24 136>27 136>30 137b<c,FillFlood>22 466s23
+136i24 X{integer}
+136i27 Y{integer}
+136i30 Hue{integer}
+139V13 SetWindowTitle{integer} 139>29 140b<c,SetWindowTitle>22 317s23
+139a29 Title{7|79A9}
+142V13 DrawLine{integer} 142>23 142>27 142>31 142>35 142>39 143b<c,DrawLine>22
+. 419s23
+142i23 X1{integer}
+142i27 Y1{integer}
+142i31 X2{integer}
+142i35 Y2{integer}
+142i39 Hue{integer}
+145V13 DrawBox{integer} 145>22 145>26 145>30 145>34 145>38 145>43 146b<c,DrawBox>22
+. 431s23
+145i22 X1{integer}
+145i26 Y1{integer}
+145i30 X2{integer}
+145i34 Y2{integer}
+145i38 Hue{integer}
+145i43 Filled{integer}
+148V13 DrawCircle{integer} 148>25 148>28 148>31 148>39 148>44 149b<c,DrawCircle>22
+. 443s23
+148i25 X{integer}
+148i28 Y{integer}
+148i31 Radius{integer}
+148i39 Hue{integer}
+148i44 Filled{integer}
+151V13 DrawEllipse{integer} 151>26 151>30 151>34 151>38 151>42 151>47 152b<c,DrawEllipse>22
+. 456s23
+151i26 X1{integer}
+151i30 Y1{integer}
+151i34 X2{integer}
+151i38 Y2{integer}
+151i42 Hue{integer}
+151i47 Filled{integer}
+154V13 DisplayText{integer} 154>26 154>29 154>42 154>63 155b<c,DisplayText>22
+. 478s23
+154i26 X{integer}
+154i29 Y{integer}
+154a42 Text{7|79A9}
+154i63 Hue{integer}
+157V13 GetMaxSize{integer} 157>25 157>28 158b<c,GetMaxSize>22
+157p25 X{73P9}
+157p28 Y{73P9}
+160V13 WhereX{integer} 161b<c,WhereX>22 488s23
+163V13 WhereY{integer} 164b<c,WhereY>22 499s23
+166V13 GotoXY{integer} 166>21 166>24 167b<c,GotoXY>22 510s23
+166i21 X{integer}
+166i24 Y{integer}
+169V13 DrawTo{integer} 169>21 169>24 169>27 170b<c,DrawTo>22 520s23
+169i21 X{integer}
+169i24 Y{integer}
+169i27 Hue{integer}
+177U14 Make_Exception 177b14 177>30 217l8 217t22 242s10 279s10 299s10 309s10
+. 319s10 329s10 340s10 350s10 365s10 376s10 393s10 421s10 433s10 445s10 458s10
+. 468s10 480s10 490s10 501s10 512s10 522s10
+177i30 Error{integer} 179r10 180r15
+226b7 Result{boolean} 229m25 230m25 233r14
+238i7 Return_Value{integer} 240m7 241r10 242r26 244r23
+275i7 Return_Value{integer} 277m7 278r10 279r26
+295i7 Return_Value{integer} 297m7 298r10 299r26
+305i7 Return_Value{integer} 307m7 308r10 309r26
+315i7 Return_Value{integer} 317m7 318r10 319r26
+325i7 Return_Value{integer} 327m7 328r10 329r26 331r30
+336i7 Return_Value{integer} 338m7 339r10 340r26
+346i7 Return_Value{integer} 348m7 349r10 350r26 352r10
+361i7 Return_Value{integer} 363m7 364r10 365r26 367r38
+372i7 Return_Value{integer} 374m7 375r10 376r26 378r10
+387i7 Return_Value{integer} 391m7 392r10 393r26
+388r7 Result{4|61R9} 396m10 397m10 399m10 400m10 403m33 404m33 405m33 406m33
+. 407m33 408m33 411r14
+389p7 Our_Mouse{70P9} 391r34
+417i7 Return_Value{integer} 419m7 420r10 421r26
+429i7 Return_Value{integer} 431m7 432r10 433r26
+441i7 Return_Value{integer} 443m7 444r10 445r26
+454i7 Return_Value{integer} 456m7 457r10 458r26
+464i7 Return_Value{integer} 466m7 467r10 468r26
+476i7 Return_Value{integer} 478m7 479r10 480r26
+486i7 Return_Value{integer} 488m7 489r10 490r26 492r14
+497i7 Return_Value{integer} 499m7 500r10 501r26 503r14
+508i7 Return_Value{integer} 510m7 511r10 512r26
+518i7 Return_Value{integer} 520m7 521r10 522r26
+X 6 interfac.ads
+36K9*Interfaces 5|29r6 40r22 6|177e15
+X 7 i-c.ads
+18K20*C 5|29w17 40r33 7|230e17
+72E9*char<character>
+79A9*char_array(72E9)<60M9> 5|139r39 154r51
+84V13*To_C{79A9} 5|317s41 478s44
+

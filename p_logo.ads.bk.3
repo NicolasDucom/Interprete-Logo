@@ -1,0 +1,60 @@
+
+package p_logo is
+	type t_action is new String(1..20);
+
+	--type noValueCommands is (home,penup,pu,pendown,pd,cg,clean);
+	type bufferSymbols is ('[',']');
+	--type bufferCommands is (REPEAT);
+	type rules IS Record
+		penDown:boolean;
+	END RECORD;
+	TYPE t_Command_Buffer;
+	type t_command_in_buffer;
+	TYPE T_Command;
+	type pt_buffer is access all t_command_buffer;
+	type t_command IS Record
+		action: t_action;
+		value: Integer;
+		buffer: pt_buffer;
+    END RECORD;
+    type pt_command is access all t_command;
+    type pt_command_in_buffer is access all t_command_in_buffer;
+	type t_command_in_buffer is Record
+		command: pt_command;
+		nextCommand: pt_command_in_buffer;
+	end record;
+	type t_command_buffer IS Record
+		first:pt_command_in_buffer;
+		length:Integer;
+	end Record;
+
+	type turtle is Record
+		orientation:Integer;
+		xCoord:Integer;
+		yCoord:Integer;
+	end Record;
+
+
+
+	procedure build(t:in out turtle; interpreterRules:in out rules; op:in out pt_command);
+	Procedure interpreter;
+	function compareStrings(A,B:t_action) return boolean;
+	function getCommand return pt_command;
+	function inNoValueCommands(action: t_action) return boolean;
+	function inBufferCommands(action: t_action) return boolean;
+	function getBufferCommand return pt_buffer;
+	procedure addToBuffer(buffer: in out pt_buffer;command: in command_in_buffer);
+	function lastCommandInBuffer(buffer:Pt_Buffer) return pt_command_in_buffer;
+	procedure listBufferCommands(Buffer:Pt_Buffer);
+	function endOfBuffer(buffer:Pt_Buffer;command:pt_command_in_buffer) return boolean;
+	function degreesToRad(d: Integer) return float;
+	function textToAction(S:String) return t_action;
+	procedure put(act:in t_action);
+	procedure doCommand(comm:pt_command;turt:in out turtle);
+	procedure doForward(comm:pt_command;turt:in out turtle);
+	procedure doBackward(comm:pt_command;turt:in out turtle);
+	procedure doLeft(comm:pt_command;turt:in out turtle);
+	procedure doRight(comm:pt_command;turt:in out turtle);
+	procedure doRepeat(comm:in pt_command;turt: in out turtle);
+	procedure doBuffer(buffer:in Pt_Buffer;turt:in out turtle);
+	end p_logo;
