@@ -1,40 +1,39 @@
 
 package p_logo is
-	type t_action is new String(1..20);
+	TYPE t_action is new String(1..20);
 
 	--type noValueCommands is (home,penup,pu,pendown,pd,cg,clean);
-	type bufferSymbols is ('[',']');
 	--type bufferCommands is (REPEAT);
-	type rules IS Record
+	TYPE rules IS Record
 		penDown:boolean;
 	END RECORD;
 	TYPE t_Command_Buffer;
-	type t_command_in_buffer;
+	TYPE t_command_in_buffer;
 	TYPE T_Command;
-	type pt_buffer is access all t_command_buffer;
-	type t_command IS Record
+	TYPE pt_buffer is access all t_command_buffer;
+	TYPE t_command IS Record
 		action: t_action;
 		value: Integer;
 		buffer: pt_buffer;
     END RECORD;
-    type pt_command is access all t_command;
-    type pt_command_in_buffer is access all t_command_in_buffer;
-	type t_command_in_buffer is Record
+    TYPE pt_command is access all t_command;
+    TYPE pt_command_in_buffer is access all t_command_in_buffer;
+	TYPE t_command_in_buffer is Record
 		command: pt_command;
 		nextCommand: pt_command_in_buffer;
 	end record;
-	type t_command_buffer IS Record
+	TYPE t_command_buffer IS Record
 		first:pt_command_in_buffer;
 		length:Integer;
 	end Record;
 
-	type turtle is Record
+	TYPE turtle is Record
 		orientation:Integer;
 		xCoord:Integer;
 		yCoord:Integer;
 	end Record;
 
-
+	turtleOutsideWindow: exception;
 
 	procedure build(t:in out turtle; interpreterRules:in out rules; op:in out pt_command);
 	Procedure interpreter;
@@ -49,6 +48,7 @@ package p_logo is
 	function endOfBuffer(buffer:Pt_Buffer;command:pt_command_in_buffer) return boolean;
 	function degreesToRad(d: Integer) return float;
 	function textToAction(S:String) return t_action;
+	procedure emptyBuffer(buff:pt_buffer);
 	procedure put(act:in t_action);
 	procedure doCommand(comm:pt_command;turt:in out turtle;interpreterRules:in out rules);
 	procedure doForward(comm:pt_command;turt:in out turtle;interpreterRules:in out rules);

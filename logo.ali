@@ -9,15 +9,19 @@ P ZX
 RN
 RV SPARK
 
-U logo%b		logo.adb		eefc845a NE OO SU KU
+U logo%b		logo.adb		1c133bc7 NE OO SU KU
 W p_logo%s		p_logo.adb		p_logo.ali
 
-D logo.adb		20140504205446 5e8f2b93
-D p_logo.ads		20140506225100 b073afc9
+D ada.ads		20130417131022 3ffc8e18
+D a-unccon.ads		20130417131022 f9eb8f06
+D logo.adb		20140516201600 5e8f2b93
+D p_logo.ads		20140516174126 429c1054
 D system.ads		20130417131036 5fc8ae56
-X 1 logo.adb
+D s-exctab.ads		20130417131028 66e51330
+D s-stalib.ads		20130417131032 f78bcf95
+X 3 logo.adb
 2U11*Logo 2b11 5l5 5t9
-X 2 p_logo.ads
-2K9*p_logo 1|1w6 1r18 4r3 2|64e19
-40U19*interpreter 1|4s10
+X 4 p_logo.ads
+2K9*p_logo 3|1w6 1r18 4r3 4|64e19
+39U19*interpreter 3|4s10
 

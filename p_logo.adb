@@ -3,6 +3,7 @@ WITH Ada.Integer_Text_IO; USE Ada.Integer_Text_IO;
 WITH Ada.Numerics; USE Ada.Numerics;
 With Ada.Numerics.Elementary_Functions; USE Ada.Numerics.Elementary_Functions;
 with p_fenetre; use p_fenetre;
+with Ada.Unchecked_Deallocation;
 
 PACKAGE BODY P_Logo IS
 
@@ -31,6 +32,11 @@ PACKAGE BODY P_Logo IS
          Put(op.value);
          Put_line(" ");
          doCommand(Op,turt,interpreterRules);
+         if inBufferCommands(op.action) then
+            put_line("dealocatting buffer");
+            --emptyBuffer(Op.buffer);
+            put_line("done");
+         end if;
       END LOOP;
    END Interpreter;
 
@@ -201,6 +207,24 @@ PACKAGE BODY P_Logo IS
       return action;
    end textToAction;
 
+   PROCEDURE emptyBuffer(Buff:Pt_Buffer) IS
+      procedure free is new Ada.Unchecked_Deallocation(
+         Object => t_command_in_buffer,
+         Name   => pt_command_in_buffer);
+   temp:pt_command_in_buffer;
+   command:pt_command_in_buffer:=buff.first;
+   BEGIN
+      while not endOfBuffer(buff,command) loop
+      temp:=command;
+      if(command.command.buffer/=NULL) then
+         emptyBuffer(command.command.buffer);
+      end if;
+      command:=command.nextCommand;
+      free(temp);
+      put_line("deallocation");
+      end loop;
+   end emptyBuffer;
+
    PROCEDURE put(act:in t_action) is
    BEGIN
       for i in act'range loop
@@ -242,6 +266,9 @@ PACKAGE BODY P_Logo IS
    BEGIN
    turt.xCoord:=turt.xCoord+integer(float(comm.value)*cos(degreesToRad(turt.orientation)));
    turt.yCoord:=turt.yCoord+integer(float(comm.value)*sin(degreesToRad(turt.orientation)));
+   if Get_window_Height<turt.xCoord OR turt.yCoord<0 OR turt.xCoord<0 Or turt.yCoord>Get_window_Width then
+      raise turtleOutsideWindow;
+   end if;
    if interpreterRules.penDown then
       Draw_Line(oldY,oldX,turt.yCoord,turt.xCoord);
    end if;
@@ -252,10 +279,10 @@ PACKAGE BODY P_Logo IS
    oldY:integer:=turt.yCoord;
    BEGIN
       turt.xCoord:=(turt.xCoord-integer(float(comm.value)*cos(degreesToRad(turt.orientation))));
-      if Get_window_Heightt then
-      TODO!
-   end if;
       turt.yCoord:=(turt.yCoord-integer(float(comm.value)*sin(degreesToRad(turt.orientation))));
+      if Get_window_Height<turt.xCoord OR turt.yCoord<0 OR turt.xCoord<0 Or turt.yCoord>Get_window_Width then
+      raise turtleOutsideWindow;
+   end if;
       if interpreterRules.penDown then
          Draw_Line(oldY,oldX,turt.yCoord,turt.xCoord);
       end if;

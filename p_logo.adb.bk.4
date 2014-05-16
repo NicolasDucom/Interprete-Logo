@@ -3,6 +3,7 @@ WITH Ada.Integer_Text_IO; USE Ada.Integer_Text_IO;
 WITH Ada.Numerics; USE Ada.Numerics;
 With Ada.Numerics.Elementary_Functions; USE Ada.Numerics.Elementary_Functions;
 with p_fenetre; use p_fenetre;
+with Ada.Unchecked_Deallocation;
 
 PACKAGE BODY P_Logo IS
 
@@ -31,6 +32,9 @@ PACKAGE BODY P_Logo IS
          Put(op.value);
          Put_line(" ");
          doCommand(Op,turt,interpreterRules);
+         if inBufferCommands(op.action) then
+            emptyBuffer(Op.buffer);
+         end if;
       END LOOP;
    END Interpreter;
 
@@ -57,14 +61,14 @@ PACKAGE BODY P_Logo IS
    BEGIN
       op.action:=(others=>' ');
       get(c);
-      while c=' ' loop
+      while c=' ' OR c=';' loop
          get(c);
       end loop;
       for i in op.action'first..op.action'last loop
       Ada.Text_IO.put("got character:");
       put(c);
       Put_line(" ");
-         if c=' ' then
+         if c=' ' OR c=';' then
          Ada.Text_IO.put_line("got space character");
             exit;
          end if;
@@ -201,6 +205,24 @@ PACKAGE BODY P_Logo IS
       return action;
    end textToAction;
 
+   PROCEDURE EmptyBuffer(Buff:Pt_Buffer) IS
+      procedure free is new Ada.Unchecked_Deallocation(
+         Object => pt_command_in_buffer,
+         Name   => pt_buffer);
+   temp:pt_command_in_buffer;
+   command:pt_command_in_buffer:=buff.first;
+   BEGIN
+      while not endOfBuffer(buff,command) loop
+      temp:=command;
+      if(command.command.buffer/=NULL) then
+         emptyBuffer(command.command.buffer);
+      end if;
+      command:=command.nextCommand;
+      free(temp);
+      end loop;
+      free(buff);
+   end emptyBuffer;
+
    PROCEDURE put(act:in t_action) is
    BEGIN
       for i in act'range loop
@@ -220,15 +242,15 @@ PACKAGE BODY P_Logo IS
       elsif compareStrings(comm.action,textToAction("left")) OR compareStrings(comm.action,textToAction("lt")) then
          doLeft(comm,turt);
       elsif compareStrings(comm.action,textToAction("right")) OR compareStrings(comm.action,textToAction("rt")) then
-         doRight(comm,turt);      
+         doRight(comm,turt);
       elsif compareStrings(comm.action,textToAction("repeat"))  then
          doRepeat(comm,turt,interpreterRules);
       elsif compareStrings(comm.action,textToAction("home")) then
-         doHome(comm,turt);      
+         doHome(comm,turt);
       elsif compareStrings(comm.action,textToAction("penup")) OR compareStrings(comm.action,textToAction("pu")) then
-         doPenUp(comm,interpretderRules);      
+         doPenUp(comm,interpreterRules);
       elsif compareStrings(comm.action,textToAction("pendown")) OR compareStrings(comm.action,textToAction("pd")) then
-         doPenDown(comm,interpreterRules);      
+         doPenDown(comm,interpreterRules);
       elsif compareStrings(comm.action,textToAction("clear")) OR compareStrings(comm.action,textToAction("cs")) then
          doClear(comm);
       else
@@ -240,8 +262,11 @@ PACKAGE BODY P_Logo IS
    oldX:integer:=turt.xCoord;
    oldY:integer:=turt.yCoord;
    BEGIN
-   turt.xCoord:=(turt.xCoord+integer(float(comm.value)*cos(degreesToRad(turt.orientation)))) mod Get_window_Width;
-   turt.yCoord:=(turt.yCoord+integer(float(comm.value)*sin(degreesToRad(turt.orientation)))) mod Get_window_Height;
+   turt.xCoord:=turt.xCoord+integer(float(comm.value)*cos(degreesToRad(turt.orientation)));
+   turt.yCoord:=turt.yCoord+integer(float(comm.value)*sin(degreesToRad(turt.orientation)));
+   if Get_window_Height<turt.yCoord OR turt.yCoord<0 OR turt.xCoord<0 Or turt.xCoord>Get_window_Width then
+      raise turtleOutsideWindow;
+   end if;
    if interpreterRules.penDown then
       Draw_Line(oldY,oldX,turt.yCoord,turt.xCoord);
    end if;
@@ -251,8 +276,11 @@ PACKAGE BODY P_Logo IS
    oldX:integer:=turt.xCoord;
    oldY:integer:=turt.yCoord;
    BEGIN
-      turt.xCoord:=(turt.xCoord-integer(float(comm.value)*cos(degreesToRad(turt.orientation)))) mod Get_window_Width;
-      turt.yCoord:=(turt.yCoord-integer(float(comm.value)*sin(degreesToRad(turt.orientation)))) mod Get_window_Height;
+      turt.xCoord:=(turt.xCoord-integer(float(comm.value)*cos(degreesToRad(turt.orientation))));
+      turt.yCoord:=(turt.yCoord-integer(float(comm.value)*sin(degreesToRad(turt.orientation))));
+      if Get_window_Height<turt.yCoord OR turt.yCoord<0 OR turt.xCoord<0 Or turt.xCoord>Get_window_Width then
+      raise turtleOutsideWindow;
+   end if;
       if interpreterRules.penDown then
          Draw_Line(oldY,oldX,turt.yCoord,turt.xCoord);
       end if;
@@ -292,7 +320,7 @@ PACKAGE BODY P_Logo IS
    procedure doRepeat(comm:in pt_command;turt: in out turtle;interpreterRules:in out rules) IS
    BEGIN
    Put_line("repeating...");
-   for i in 0..comm.value loop
+   for i in 1..comm.value loop
       doBuffer(comm.buffer,turt,interpreterRules);
    end loop;
    end doRepeat;
